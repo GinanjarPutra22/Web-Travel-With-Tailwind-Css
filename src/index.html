@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <!-- Alpine js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-slate-1000">
+    <!-- Start Hero -->
+    <nav class="px-4 py-9 lg:px-32" x-data="{navOpen: true}">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <img src="../public/assets/logo.svg" alt="" class="order-1 sm:order-2">
+                <img @click="navOpen= !navOpen" src="../public/assets/togle-menu.svg" alt=""
+                    class="order-2 cursor-pointer sm:order-1 lg:hidden">
+                <!-- Start Nav lg -->
+                <div class="order-2 hidden lg:block">
+                    <ul class="flex gap-16">
+                        <li class="text-sm font-bold text-grey text-circular">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="text-sm font-normal opacity-50 text-grey text-circular">
+                            <a href="#">Disover</a>
+                        </li>
+                        <li class="text-sm font-normal opacity-50 text-grey text-circular">
+                            <a href="#">Special</a>
+                        </li>
+                        <li class="text-sm font-normal opacity-50 text-grey text-circular">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Button -->
+                <div class="order-3 hidden sm:block ">
+                    <button class="px-6 py-2 text-sm font-bold rounded-full bg-tranparant text-grey grow">Login</button>
+                    <button class="px-6 py-2 text-sm font-bold text-white rounded-full bg-primary grow">Sign Up</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div x-show="navOpen" x-data="{open: false}"
+            class="fixed bottom-0 left-0 right-0 z-50 px-4 py-4 bg-white border menu md:px-8 lg:hidden"
+            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+            <ul class="flex justify-between">
+                <li> <button href="#" class="flex flex-col items-center justify-center gap-1 text-primary">
+                        <ion-icon name="home-outline" class="text-xl"></ion-icon>
+                        <span class="text-base font-bold">Home</span>
+                    </button></li>
+
+                <li> <button href="#" class="flex flex-col items-center justify-center gap-1">
+                        <ion-icon name="albums-outline" class="text-xl opacity-50 text-grey"></ion-icon>
+                        <span class="text-base font-normal opacity-50 text-grey">Discover</span>
+                    </button></li>
+
+                <li> <button href="#" class="flex flex-col items-center justify-center gap-1">
+                        <ion-icon name="sparkles-outline" class="text-xl opacity-50 text-grey"></ion-icon>
+                        <span class="text-base font-normal opacity-50 text-grey">Special</span>
+                    </button></li>
+
+                <li> <button href="#" class="flex flex-col items-center justify-center gap-1">
+                        <ion-icon name="chatbox-ellipses-outline" class="text-xl opacity-50 text-grey"></ion-icon>
+
+                        <span class="text-base font-normal opacity-50 text-grey">Contact</span>
+                    </button></li>
+
+                <li> <button href="#" @click="open = !open" class="flex flex-col items-center justify-center gap-1">
+                        <ion-icon name="grid-outline" class="text-xl opacity-50 text-grey"></ion-icon>
+                        <span class="text-base font-normal opacity-50 text-grey">More</span>
+                    </button></li>
+            </ul>
+
+            <div x-show="open"
+                class="absolute flex w-3/4 gap-6 px-12 py-4 -translate-x-1/2 bg-white rounded-full bottom-24 left-1/2"
+                x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+                <button class="px-6 py-2 text-sm font-bold rounded-full bg-tranparant text-grey grow">Login</button>
+                <button class="px-6 py-2 text-sm font-bold text-white rounded-full bg-primary grow">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- End Hero -->
+
+    <!-- Start Hero -->
+    <section class="lg:mx-32">
+        <div class="container items-center p-4 mx-auto py-28 lg:py-16">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="items-center order-2 col-span-12 lg:col-span-5 lg:order-1">
+                    <div class="order-2">
+                        <button
+                            class="flex gap-4 px-8 py-4 mx-auto mb-4 text-sm font-bold text-center rounded-full text-secondary bg-slate-50 drop-shadow-2xl md:mb-[43px] lg:mb-11 lg:mx-0 hover:bg-slate-100 active:bg-slate-100 focus:outline-none focus:ring focus:ring-1 focus:ring-secondary perr">
+                            Explore the world!
+                            <img src="../public/assets/icon/work.svg" class="" alt="">
+                        </button>
+                        <h1
+                            class="font-bold text-[40px] leading-tight text-center mb-8 md:text-[56px] lg:text-[69px] lg:text-start">
+                            Travel <span class="text-secondary"> top destination </span>of the world
+                        </h1>
+
+                        <p
+                            class="mx-auto mb-8 text-center opacity-50 font-base text-grey md:text-[18px] md:w-3/4 mx-auto lg:w-full lg:text-start">
+                            We
+                            always
+                            make our
+                            customer happy
+                            by
+                            providing
+                            as many choices as possible </p>
+
+                        <div class="flex flex-col justify-center gap-6 md:flex-row lg:justify-start">
+                            <button
+                                class="px-8 py-6 text-sm font-bold text-white rounded-full md:px-12 bg-primary lg:py-4 drop-shadow-2xl hover:bg-primary_hover active:bg-violet-800 focus:outline-none focus:ring focus:ring-violet-400 ">Get
+                                Started
+                            </button>
+
+
+                            <button
+                                class="flex items-center justify-center gap-4 px-8 py-6 text-sm font-bold bg-white rounded-full hover:bg-slate-50 active:bg-slate-100 focus:outline-none focus:ring focus:ring-slate-100 md:gap-4 drop-shadow-2xl lg:py-4">
+                                <img src="../public/assets/icon/play.svg" alt="">
+                                Watch Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 col-span-12 lg:col-span-7">
+                    <div>
+                        <img src="../public/assets/hero.png" class="w-full " alt="">
+                    </div>
+                </div>
+                <div class="order-3 col-span-12 py-8 lg:py-14">
+                    <div class="flex flex-wrap justify-center gap-7 sm:gap-7 lg:justify-between">
+                        <div><img src="../public/assets/logo/tripad.svg" class="h-5 sm:h-8 " alt=""></div>
+                        <div><img src="../public/assets/logo/expedia.svg" class="h-5 sm:h-8 " alt=""></div>
+
+                        <div><img src="../public/assets/logo/booking.svg" class="h-5 sm:h-8 " alt=""></div>
+                        <div><img src="../public/assets/logo/airbnb.svg" class="h-5 sm:h-8 " alt=""></div>
+                        <div><img src="../public/assets/logo/orbitz.svg" class="h-5 sm:h-8 " alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- service sectionn -->
+    <section class="py-16 overflow-x-hidden">
+        <div class="container lg:px-32">
+            <div class="grid items-center grid-cols-12">
+                <div class="flex-col col-span-4 gap-4">
+                    <span class="font-bold leading-tight text-secondary sm:text-2xl ">Service</span>
+                    <h1 class="lg:text-[44px] leading-tight ">Our top value categories for you</h1>
+                </div>
+                <div class="flex w-screen col-span-8 gap-6">
+                    <div
+                        class="flex flex-col items-center justify-center gap-16 w-[350px] rounded-3xl border shadow-lg p-16">
+                        <div><img src="../public/assets/icon/destination 1.png" alt=""></div>
+                        <div class="flex flex-col gap-8">
+                            <h2 class="text-lg font-bold text-center text-gray">Best Tour Guide</h2>
+                            <p class="text-lg leading-relaxed text-center opacity-50 font-inter text-gray">What looked
+                                like a small
+                                patch of purple grass, above five
+                                feet.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center gap-16 w-[350px] rounded-3xl border shadow-lg p-16">
+                        <div><img src="../public/assets/icon/destination 1.png" alt=""></div>
+                        <div class="flex flex-col gap-8">
+                            <h2 class="text-lg font-bold text-center text-gray">Best Tour Guide</h2>
+                            <p class="text-lg leading-relaxed text-center opacity-50 font-inter text-gray">What looked
+                                like a small
+                                patch of purple grass, above five
+                                feet.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center gap-16 w-[350px] rounded-3xl border shadow-lg p-16">
+                        <div><img src="../public/assets/icon/destination 1.png" alt=""></div>
+                        <div class="flex flex-col gap-8">
+                            <h2 class="text-lg font-bold text-center text-gray">Best Tour Guide</h2>
+                            <p class="text-lg leading-relaxed text-center opacity-50 font-inter text-gray">What looked
+                                like a small
+                                patch of purple grass, above five
+                                feet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End service -->
+    <div class=block">
+        <p class="bg-sky-300  w-[430px] text-center py-4 font-bold">Mobile</p>
+        <p class="bg-red-300 w-[1024px] text-center py-4 font-bold">Tablet</p>
+    </div>
+
+    <!-- End Hero -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="mb-96"></div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
+</html>
